@@ -71,6 +71,30 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 .flag{display:block;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.2);flex:none}
 .lgm{position:absolute;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--bd2);border-radius:12px;padding:4px;min-width:190px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .lgm button{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:var(--tx);font:inherit;font-size:15px;padding:10px;border-radius:8px;text-align:left;cursor:pointer}.lgm button:hover{background:var(--in)}.lgm button[aria-selected="true"]{font-weight:600}.lgm button svg:last-child:not(.flag){margin-left:auto;color:var(--btn)}
+.cal{position:relative}.cal.sw{animation:cdsw .28s ease}
+.cal u{position:relative;transition:transform .18s cubic-bezier(.3,1.6,.5,1),box-shadow .18s}
+.cal u.on{cursor:pointer;-webkit-tap-highlight-color:transparent}.cal u.on:active{transform:scale(.88)}.cal u.on:focus-visible{outline:2px solid var(--btn);outline-offset:2px}
+@media (hover:hover){.cal u.on:hover{transform:scale(1.1)}}
+.cal u.sel,.cal u.sel:hover{transform:scale(1.15);box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--col),0 4px 14px color-mix(in srgb,var(--col) 55%,transparent)}
+.cal u.on::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--col);opacity:0;pointer-events:none}.cal u.rip::after{animation:cdrip .55s ease-out}
+.cdw{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.2,.8,.2,1)}.cdw.open{grid-template-rows:1fr}.cdw>div{overflow:hidden;min-height:0}
+.cdd{margin-top:14px;border:1.5px solid var(--c);border-radius:12px;overflow:hidden;transform-origin:var(--ox,50%) 0;animation:cdpop .35s cubic-bezier(.2,1.3,.4,1)}
+.cdh{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--c);color:var(--ct)}.cdi{display:flex;animation:cdwob .6s ease .15s}
+.cdh b{display:block;font-size:15px}.cdh small{display:block;font-size:12px}
+.cdcl{margin-left:auto;background:transparent;border:0;color:inherit;padding:6px;border-radius:8px;cursor:pointer;display:flex;transition:transform .2s}@media (hover:hover){.cdcl:hover{transform:rotate(90deg)}}
+.cdb{padding:10px 12px 12px;background:var(--card)}.cdb>p{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;margin:4px 0 6px;color:var(--S)}.cdb>p.no{color:var(--red);margin-top:12px}
+.cdcs{display:flex;flex-wrap:wrap;gap:5px}
+.cdc{font-size:12.5px;padding:4px 10px;border-radius:999px;color:var(--tx);opacity:0;animation:cdin .3s ease forwards;animation-delay:calc(var(--i)*35ms + 120ms)}
+.cdc.ok{background:color-mix(in srgb,var(--S) 16%,var(--card));border:1px solid color-mix(in srgb,var(--S) 40%,transparent)}.cdc.no{background:color-mix(in srgb,var(--red) 12%,var(--card));border:1px solid color-mix(in srgb,var(--red) 35%,transparent)}
+.cdb>p.cdt{display:flex;gap:6px;align-items:flex-start;font-size:12.5px;font-weight:400;color:var(--mut);margin:12px 0 0;opacity:0;animation:cdin .3s ease .6s forwards}.cdt svg{color:var(--L);margin-top:1px}
+.cdx{font-size:12px;color:var(--mut);text-align:center;margin:12px 0 0}
+.cdd.na,.cdd.na *{animation:none!important}.cdd.na .cdc,.cdd.na .cdt{opacity:1}
+@keyframes cdsw{from{opacity:0;transform:translateX(var(--dx,16px))}to{opacity:1;transform:none}}
+@keyframes cdrip{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2.1)}}
+@keyframes cdpop{from{opacity:0;transform:scale(.92) translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes cdwob{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}50%{transform:rotate(10deg)}75%{transform:rotate(-5deg)}}
+@keyframes cdin{from{opacity:0;transform:translateY(6px) scale(.9)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cal u,.cal.sw,.cdw,.cdd,.cdi,.cdc,.cdt,.cdcl,.cal u.rip::after{animation:none!important;transition:none!important}.cdc,.cdb>p.cdt{opacity:1}}
 </style></head><body><main class="w">
 <noscript><div><p>Zvoz odpadu v obci Geča 2026 (KOSIT): komunálny odpad, sklo, papier a plasty podľa zvozového kalendára. Pripomienky do kalendára a informácie, kam s objemným, elektro a iným odpadom. Na zobrazenie kalendára zapnite JavaScript.</p></div></noscript>
 
@@ -84,7 +108,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 <button class="zlink" id="zlink" type="button"></button>
 <div class="lb" data-i18n="sec_cal"></div>
 <div class="card"><div class="nav"><button id="pv" data-i18n-aria="prev_month">‹</button><span id="mt"></span><button id="nx" data-i18n-aria="next_month">›</button></div>
-<div class="cal" id="cal"></div><div class="line"></div><div class="ml" id="ml"></div></div>
+<div class="cal" id="cal"></div><div class="cdw" id="cdw"><div><div id="cdo"></div></div></div><p class="cdx" id="cdx" data-i18n="cal_hint"></p><div class="line"></div><div class="ml" id="ml"></div></div>
 <div class="lb" data-i18n="sec_rem"></div>
 <div class="card"><p class="sm" data-i18n="rem_what"></p><div class="g" id="chips"></div><div class="line"></div>
 <p class="sm" data-i18n="rem_when"></p><div id="rem"></div>
@@ -105,7 +129,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 </main>
 <script src="i18n.js"></script>
 <script>
-const APP_VERSION="v1";
+const APP_VERSION="v2";
 const D={K:{1:[6,20],2:[3,17],3:[3,17,31],4:[14,28],5:[12,26],6:[9,23],7:[7,21],8:[4,18],9:[1,15,29],10:[13,27],11:[10,24],12:[8,22]},
 S:{1:[3],3:[21],5:[2],7:[4],9:[5],10:[31]},
 P:{1:[17],2:[14],3:[14],4:[18],5:[16],6:[13],7:[18],8:[15],9:[19],10:[17],11:[21],12:[19]},
@@ -129,7 +153,8 @@ const ic=(p,s)=>'<svg viewBox="0 0 24 24" width="'+s+'" height="'+s+'" fill="non
 const BELL='<path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3H4a4 4 0 0 0 2-3v-3a7 7 0 0 1 4-6"/><path d="M9 17v1a3 3 0 0 0 6 0v-1"/>';
 const WARN='<path d="M12 9v4M10.4 3.6L2.3 17.1a1.9 1.9 0 0 0 1.6 2.9h16.2a1.9 1.9 0 0 0 1.6-2.9L13.6 3.6a1.9 1.9 0 0 0-3.2 0zM12 16h.01"/>';
 const CALP='<path d="M12.5 21H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5"/><path d="M16 3v4M8 3v4M4 11h16M16 19h6M19 16v6"/>';
-const CHECK='<path d="M5 12l5 5L20 7"/>';
+const CHECK='<path d="M5 12l5 5L20 7"/>',XMARK='<path d="M6 6l12 12M18 6L6 18"/>',BULB='<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>';
+const DI={K:'<path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6M14 11v6"/>',S:'<path d="M10 2h4v4l2 3v11a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9l2-3z"/><path d="M8 13h8"/>',P:'<path d="M4 5h13v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5M8 17h3"/>',L:'<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M6 8h12M6 17h12M10 2h4"/>'};
 const FLAGS={
 sk:'<svg class="flag" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="6.67" width="30" height="6.67" fill="#0b4ea2"/><rect y="13.33" width="30" height="6.67" fill="#ee1c25"/><path d="M4.6 4.2h8.8v6.6c0 3.4-2.9 5.1-4.4 5.8c-1.5-.7-4.4-2.4-4.4-5.8z" fill="#ee1c25" stroke="#fff" stroke-width=".9"/><path d="M9 5.6v7.6M7 7.6h4M6.4 9.9h5.2" stroke="#fff" stroke-width="1.1"/><path d="M5.4 12.6c.8-1.5 2-1.5 2.6 0c.6-1.4 1.8-1.4 2.2 0c.7-1.4 1.9-1.4 2.4 0c-.5 1.8-2.1 2.9-3.6 3.6c-1.6-.7-3.1-1.8-3.6-3.6z" fill="#0b4ea2"/></svg>',
 hu:'<svg class="flag" viewBox="0 0 30 20" width="27" height="18" aria-hidden="true"><rect width="30" height="6.67" fill="#ce2939"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><rect y="13.33" width="30" height="6.67" fill="#477050"/></svg>',
@@ -158,10 +183,30 @@ function render(){const m=cur+1;$("mt").textContent=T("month_title",{m:T("months
 let h=T("wd_short").map(x=>"<i>"+x+"</i>").join("");
 const off=(new Date(2026,cur,1).getDay()+6)%7,len=new Date(2026,m,0).getDate();
 for(let i=0;i<off;i++)h+="<u></u>";
-for(let d=1;d<=len;d++){const k=TYPES.find(k=>(D[k][m]||[]).includes(d));const t=now.getFullYear()==2026&&now.getMonth()==cur&&now.getDate()==d;
-h+='<u class="'+(k?"on":"")+(t?" t":"")+'"'+(k?' style="--col:var(--'+k+');--ont:var(--'+k+'t)"':"")+">"+d+"</u>"}
-$("cal").innerHTML=h;
+for(let d=1;d<=len;d++){const k=TYPES.find(k=>(D[k][m]||[]).includes(d));const t=now.getFullYear()==2026&&now.getMonth()==cur&&now.getDate()==d,s=k&&selD&&selD.m==m&&selD.d==d;
+h+='<u class="'+(k?"on":"")+(t?" t":"")+(s?" sel":"")+'"'+(k?' role="button" tabindex="0" data-d="'+d+'" aria-expanded="'+!!s+'" aria-label="'+fmtDate(new Date(2026,m-1,d),{weekday:"long",day:"numeric",month:"long"})+', '+NF(k)+'" style="--col:var(--'+k+');--ont:var(--'+k+'t)"':"")+">"+d+"</u>"}
+const ce=$("cal");ce.innerHTML=h;if(calDir){ce.style.setProperty("--dx",(calDir*18)+"px");ce.classList.remove("sw");void ce.offsetWidth;ce.classList.add("sw");calDir=0}
+drawDay();
 $("ml").innerHTML=TYPES.filter(k=>D[k][m]).map(k=>'<div style="--col:var(--'+k+')"><span class="dt"></span><span><b>'+N(k)+':</b> '+D[k][m].map(d=>fmtDate(new Date(2026,m-1,d),{day:"numeric",month:"numeric"})).join(", ")+'</span></div>').join("")}
+/* ---- day detail: tap a collection day in the calendar ---- */
+let selD=null,calDir=0,dayAnim=false;
+function drawDay(){const w=$("cdw"),o=$("cdo"),m=cur+1,anim=dayAnim;dayAnim=false;
+const k=selD&&selD.m==m?TYPES.find(k=>(D[k][m]||[]).includes(selD.d)):null;
+if(!k){w.classList.remove("open");$("cdx").hidden=false;return}
+$("cdx").hidden=true;const dt=new Date(2026,m-1,selD.d),n=Math.round((dt-t0)/864e5);
+const rel=n<0?T("day_past"):n==0?T("today"):n==1?T("tomorrow"):TP("in_days",n);
+let i=0;const chip=(x,c)=>'<span class="cdc '+c+'" style="--i:'+(i++)+'">'+x+'</span>';
+o.innerHTML='<div class="cdd'+(anim?"":" na")+'" style="--c:var(--'+k+');--ct:var(--'+k+'t);--ox:'+(selD.ox||"50%")+'"><div class="cdh"><span class="cdi">'+ic(DI[k],22)+'</span><div><b>'+NF(k)+'</b><small>'+fmtDate(dt,{weekday:"long",day:"numeric",month:"long"})+' · '+rel+'</small></div><button type="button" class="cdcl" id="cdcl" aria-label="'+T("close")+'">'+ic(XMARK,18)+'</button></div>'+
+'<div class="cdb"><p>'+ic(CHECK,15)+T("card_yes")+'</p><div class="cdcs">'+T("guide_"+k+"_yes").map(x=>chip(x,"ok")).join("")+'</div>'+
+'<p class="no">'+ic(XMARK,15)+T("card_no")+'</p><div class="cdcs">'+T("guide_"+k+"_no").map(x=>chip(x,"no")).join("")+'</div>'+
+'<p class="cdt">'+ic(BULB,15)+'<span>'+T("tip_"+k)+'</span></p></div></div>';
+if(anim)requestAnimationFrame(()=>w.classList.add("open"));else w.classList.add("open");
+$("cdcl").onclick=closeDay}
+function closeDay(){const d=selD&&selD.d;selD=null;$("cdw").classList.remove("open");setTimeout(()=>{render();const u=d&&$("cal").querySelector('u[data-d="'+d+'"]');if(u)u.focus({preventScroll:true})},300)}
+function pickDay(u){const d=+u.dataset.d;u.classList.remove("rip");void u.offsetWidth;u.classList.add("rip");
+if(selD&&selD.m==cur+1&&selD.d==d){closeDay();return}
+const ox=Math.round((u.offsetLeft+u.offsetWidth/2)/$("cal").offsetWidth*100)+"%";
+selD={m:cur+1,d,ox};setTimeout(()=>{dayAnim=true;render()},120)}
 function remHTML(){return [["p","rem_before"],["d","rem_on"]].map(g=>'<div class="rr"><span class="rl">'+ic(BELL,14)+T(g[1])+'</span><span class="pills">'+R.filter(r=>r[1]==g[0]).map(r=>'<button class="pill" data-r="'+r[0]+'" aria-pressed="'+rs.has(r[0])+'">'+r[2]+'</button>').join("")+"</span></div>").join("")}
 function drawOpts(){let tot=0;$("rem").innerHTML=remHTML();
 $("chips").innerHTML=TYPES.map(k=>{const c=dates(k).filter(x=>x>=t0).length;if(sel[k])tot+=c;
@@ -200,7 +245,7 @@ const w=n==0?T("today_cap"):n==1?T("tomorrow_cap"):wk(best)==wk(t0)?cap(fmtDate(
 return {c:ks.length==1?"k"+ks[0]:"",sym:n<=1?"r":wk(best)==wk(t0)?"y":"",t:w+" · "+ty}}
 function drawZl(){const a=nextAny();$("pz").className="tp "+a.c;$("pz").innerHTML=(a.sym=="r"?ic(WARN,13):a.sym=="y"?ic('<circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>',13):"")+"<span>"+a.t+"</span>";
 $("pd").textContent=T("io_badge");$("zlink").innerHTML=ic(ZI.truck,20)+'<span><b>'+T("tab_zd")+'</b> · '+T("io_link")+'</span>'}
-function drawGuide(){$("guide").innerHTML=TYPES.map(k=>'<details><summary style="--col:var(--'+k+')"><span class="dt"></span>'+NF(k)+'</summary><p><b>'+T("guide_yes")+'</b> '+T("guide_"+k+"_yes")+'.</p><p><b>'+T("guide_no")+'</b> '+T("guide_"+k+"_no")+'.</p></details>').join("")}
+function drawGuide(){$("guide").innerHTML=TYPES.map(k=>'<details><summary style="--col:var(--'+k+')"><span class="dt"></span>'+NF(k)+'</summary><p><b>'+T("guide_yes")+'</b> '+T("guide_"+k+"_yes").join(", ")+'.</p><p><b>'+T("guide_no")+'</b> '+T("guide_"+k+"_no").join(", ")+'.</p></details>').join("")}
 function drawFooter(){$("fsrc").innerHTML=T("foot_src",{pdf:'<a href="https://www.kosit.sk/wp-content/uploads/2025/12/Geca.pdf">'+T("pdf_link")+'</a>'});$("fver").textContent=T("foot_ver",{v:APP_VERSION})}
 function applyStatic(){document.documentElement.lang=lang;document.title=T("doc_title");
 document.querySelectorAll("[data-i18n]").forEach(e=>{e.textContent=T(e.dataset.i18n)});
@@ -219,7 +264,9 @@ $("tabs").onclick=e=>{const b=e.target.closest("button");if(b)setView(b.dataset.
 $("zlink").onclick=()=>setView("zd",true);
 function refresh(){tick();renderNext();render();drawOpts();drawZl()}
 function sched(){const n=new Date(),t=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,0,1,0);setTimeout(()=>{refresh();sched()},t-n)}
-$("pv").onclick=()=>{cur=(cur+11)%12;render()};$("nx").onclick=()=>{cur=(cur+1)%12;render()};
+$("pv").onclick=()=>{cur=(cur+11)%12;selD=null;calDir=-1;render()};$("nx").onclick=()=>{cur=(cur+1)%12;selD=null;calDir=1;render()};
+$("cal").onclick=e=>{const u=e.target.closest("u.on");if(u)pickDay(u)};
+$("cal").onkeydown=e=>{if((e.key=="Enter"||e.key==" ")&&e.target.matches("u.on")){e.preventDefault();pickDay(e.target)}};
 $("rem").onclick=e=>{const b=e.target.closest("button");if(!b)return;const id=b.dataset.r;if(rs.has(id))rs.delete(id);else{const g=R.find(y=>y[0]==id)[1];R.forEach(r=>{if(r[1]==g)rs.delete(r[0])});rs.add(id)}try{localStorage.setItem("rm",[...rs].join(","))}catch(x){}drawOpts()};
 $("th").onclick=e=>{const m=e.target.dataset&&e.target.dataset.m;if(m)setTheme(m,true)};
 $("next").onclick=e=>{const b=e.target.closest(".tsw button");if(!b)return;const v=b.dataset.v;kdv=v;try{localStorage.setItem("kd",v)}catch(x){}setK(v);refresh()};
