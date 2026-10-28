@@ -1,0 +1,5 @@
+# Netlify runs the translation check before every deploy.
+# If it fails, the deploy stops and the previous version stays online.
+[build]
+  command = "node scripts/check-i18n.js"
+  publish = "."
