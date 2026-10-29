@@ -1,5 +1,12 @@
-# Netlify runs the translation check before every deploy.
-# If it fails, the deploy stops and the previous version stays online.
+# The app moved to https://zvoz-odpadu.netlify.app/geca/ (one app for several villages,
+# repository lukaskulha/zvoz-odpadu). This site only redirects there.
 [build]
-  command = "node scripts/check-i18n.js"
   publish = "."
+  command = "echo 'presmerovanie na https://zvoz-odpadu.netlify.app/geca/'"
+
+# Every address of the old site goes to the new one. sw.js is a real file and is not
+# redirected: it removes the old offline copy from phones that had the app installed.
+[[redirects]]
+  from = "/*"
+  to = "https://zvoz-odpadu.netlify.app/geca/"
+  status = 301
