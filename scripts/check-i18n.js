@@ -29,7 +29,7 @@ const REF = "sk";
 const LANGS = Object.keys(I18N);
 const SAME_OK = new Set(["theme_auto", "theme_label", "month_title", "io_zip", "io_addr", "place", "locale"]);
 // Keys built dynamically in code, e.g. T("type_" + k)
-const DYNAMIC_PREFIXES = ["type_", "typeFull_", "typeShort_", "guide_", "tip_", "thu", "fri", "lang_name"];
+const DYNAMIC_PREFIXES = ["type_", "typeFull_", "typeShort_", "guide_", "tip_", "palette_", "thu", "fri", "lang_name"];
 const ALLOWED_TEXT = new Set(["‹", "›", "—"]);
 
 const errors = [];

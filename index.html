@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://zvoz-odpadu-geca.netlify.app/"><meta property="og:image" content="https://zvoz-odpadu-geca.netlify.app/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Zvoz odpadu Geča 2026">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Zvoz odpadu Geča 2026"><meta name="twitter:description" content="Kalendár zvozu odpadu v Geči a pripomienky do mobilu."><meta name="twitter:image" content="https://zvoz-odpadu-geca.netlify.app/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Zvoz odpadu Geča 2026","url":"https://zvoz-odpadu-geca.netlify.app/","description":"Zvoz odpadu Geča 2026: kalendár vývozu komunálneho odpadu, skla, papiera a plastov (KOSIT), upozornenia do kalendára v mobile a kam s objemným, elektro a iným odpadom v Geči.","inLanguage":"sk","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"areaServed":{"@type":"Place","name":"Geča, Košice-okolie, Slovensko"}}</script>
-<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;var p=localStorage.getItem("palette");if(p==="lavender"||p==="teal")document.documentElement.dataset.palette=p}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" href="icon-192.png"><meta name="theme-color" content="#4d8f2f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zvoz odpadu">
 <style>
 :root{color-scheme:light dark;--bg:#f5f6f8;--card:#fff;--in:#eef0f5;--tx:#1b1f2a;--mut:#667085;--bd:#e3e6ec;--bd2:#cdd3df;--btn:#2f5fd0;--bt:#fff;--K:#6b7280;--S:#4d8f2f;--P:#2f5fd0;--L:#e0b030;--Kt:#fff;--St:#fff;--Pt:#fff;--Lt:#1b1f2a;--red:#c62828;--redt:#fff;--yel:#f5b800;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -95,11 +95,27 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 @keyframes cdwob{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg)}50%{transform:rotate(10deg)}75%{transform:rotate(-5deg)}}
 @keyframes cdin{from{opacity:0;transform:translateY(6px) scale(.9)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.cal u,.cal.sw,.cdw,.cdd,.cdi,.cdc,.cdt,.cdcl,.cal u.rip::after{animation:none!important;transition:none!important}.cdc,.cdb>p.cdt{opacity:1}}
+:root[data-palette="lavender"]{--bg:#f6f4fa;--card:#ffffff;--in:#eeeaf6;--tx:#1e1a2b;--mut:#6c6680;--bd:#e6e1f0;--bd2:#d3cbe6;--btn:#6a4cc2;--bt:#ffffff}
+@media (prefers-color-scheme:dark){:root[data-palette="lavender"]:not([data-theme="light"]){--bg:#15131c;--card:#1f1c29;--in:#2a2636;--tx:#ece9f5;--mut:#a39db6;--bd:#2e293b;--bd2:#3f3851;--btn:#a993f2;--bt:#15131c}}
+:root[data-palette="lavender"][data-theme="dark"]{--bg:#15131c;--card:#1f1c29;--in:#2a2636;--tx:#ece9f5;--mut:#a39db6;--bd:#2e293b;--bd2:#3f3851;--btn:#a993f2;--bt:#15131c}
+:root[data-palette="teal"]{--bg:#f0f5f5;--card:#ffffff;--in:#e4eeee;--tx:#132124;--mut:#5a6f72;--bd:#dbe6e6;--bd2:#c3d5d6;--btn:#0b7480;--bt:#ffffff}
+@media (prefers-color-scheme:dark){:root[data-palette="teal"]:not([data-theme="light"]){--bg:#0e1618;--card:#162124;--in:#1e2c30;--tx:#e5eff0;--mut:#90a6a9;--bd:#22333a;--bd2:#32464c;--btn:#4cc2c8;--bt:#0e1618}}
+:root[data-palette="teal"][data-theme="dark"]{--bg:#0e1618;--card:#162124;--in:#1e2c30;--tx:#e5eff0;--mut:#90a6a9;--bd:#22333a;--bd2:#32464c;--btn:#4cc2c8;--bt:#0e1618}
+.hc{flex-wrap:nowrap;max-width:100%}.hc .th{flex:none}.hc .th button{white-space:nowrap}.pbw{position:relative;display:flex;min-width:0}.pbw .hbtn{min-width:0}.pbw .hbtn>span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lgb{flex:none}
+@media (max-width:429px){.hc{gap:5px}.hc .th button{padding:6px 7px;font-size:12px}.hbtn{padding:5px 7px 5px 6px;font-size:12px;gap:4px}.lgb{padding:6px 5px}}
+@media (max-width:369px){.hc .th button{padding:6px 5px}.hc .th{padding:2px}}
+.pop{position:absolute;right:0;top:calc(100% + 6px);max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--bd2);border-radius:12px;padding:6px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:230px}
+.hbtn{display:flex;align-items:center;gap:6px;padding:5px 9px 5px 7px;font-weight:500;border-radius:10px;background:var(--in);border:1px solid transparent;color:var(--tx);font:inherit;font-size:13px;cursor:pointer;line-height:1}.hbtn[aria-expanded="true"]{background:var(--card);border-color:var(--bd2)}
+.psw{display:block;flex:none;border-radius:6px;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.popt{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:var(--tx);font:inherit;font-size:15px;padding:9px 8px;border-radius:8px;text-align:left;cursor:pointer}.popt:hover{background:var(--in)}.popt[aria-checked="true"]{font-weight:600}.popt small{display:block;font-size:12px;font-weight:400;color:var(--mut)}.popt .ck{margin-left:auto;color:var(--btn)}
+.pcap{font-size:12px;color:var(--mut);margin:6px 8px 6px;text-transform:uppercase;letter-spacing:.06em}
+
 </style></head><body><main class="w">
 <noscript><div><p>Zvoz odpadu v obci Geča 2026 (KOSIT): komunálny odpad, sklo, papier a plasty podľa zvozového kalendára. Pripomienky do kalendára a informácie, kam s objemným, elektro a iným odpadom. Na zobrazenie kalendára zapnite JavaScript.</p></div></noscript>
 
 <div class="hd"><div><h1 id="h1" data-i18n="h1_zv">Zvoz odpadu – Geča 2026</h1><p class="sub" id="sub" data-i18n="sub_zv">Zvozový kalendár spoločnosti KOSIT a.s.</p></div>
 <div class="hc"><div class="seg th" id="th" role="group" data-i18n-aria="theme_label"><button data-m="auto" data-i18n="theme_auto"></button><button data-m="light" data-i18n="theme_light"></button><button data-m="dark" data-i18n="theme_dark"></button></div>
+<span class="pbw"><button class="hbtn" id="pb" type="button" aria-haspopup="listbox" aria-expanded="false"><span id="pbs"></span><span data-i18n="appearance"></span></button><div class="pop" id="pm" role="radiogroup" data-i18n-aria="palette_label" hidden><p class="pcap" data-i18n="palette_label"></p><div id="pmo"></div></div></span>
 <button class="lgb" id="lgb" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="lang_label"><span id="lgf"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6-6"/></svg></button>
 <div class="lgm" id="lgm" role="listbox" data-i18n-aria="lang_label" hidden></div></div></div>
 <div class="seg tabs" id="tabs" role="tablist" data-i18n-aria="tabs_label"><button role="tab" data-v="zv" aria-selected="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6M14 11v6"/></svg><span data-i18n="tab_zv"></span><em class="tp" id="pz"></em></button><button role="tab" data-v="zd" aria-selected="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span data-i18n="tab_zd"></span><em class="tp" id="pd"></em></button></div>
@@ -129,7 +145,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 </main>
 <script src="i18n.js"></script>
 <script>
-const APP_VERSION="v2";
+const APP_VERSION="v3";
 const D={K:{1:[6,20],2:[3,17],3:[3,17,31],4:[14,28],5:[12,26],6:[9,23],7:[7,21],8:[4,18],9:[1,15,29],10:[13,27],11:[10,24],12:[8,22]},
 S:{1:[3],3:[21],5:[2],7:[4],9:[5],10:[31]},
 P:{1:[17],2:[14],3:[14],4:[18],5:[16],6:[13],7:[18],8:[15],9:[19],10:[17],11:[21],12:[19]},
@@ -255,7 +271,7 @@ $("lgm").innerHTML=LANGS.map(l=>'<button type="button" role="option" data-l="'+l
 function langMenu(o){$("lgm").hidden=!o;$("lgb").setAttribute("aria-expanded",o)}
 function setLang(l,save){lang=l;if(save){try{localStorage.setItem("lang",l)}catch(e){}
 try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:"jazyk-"+l,title:"Jazyk "+l,event:true})}catch(e){}}
-applyStatic();drawLang();drawFooter();drawGuide();drawZdStatic();setView(view,false);refresh()}
+applyStatic();drawLang();drawFooter();drawGuide();drawZdStatic();setView(view,false);refresh();drawPal()}
 $("lgb").onclick=e=>{e.stopPropagation();langMenu($("lgm").hidden)};
 $("lgm").onclick=e=>{const b=e.target.closest("button");if(!b)return;langMenu(false);if(b.dataset.l!=lang)setLang(b.dataset.l,true)};
 document.addEventListener("click",e=>{if(!$("lgm").hidden&&!e.target.closest("#lgm,#lgb"))langMenu(false)});
@@ -276,6 +292,24 @@ const u=URL.createObjectURL(new Blob([t],{type:"text/calendar;charset=utf-8"})),
 applyStatic();drawLang();drawFooter();drawGuide();
 setTheme(document.documentElement.dataset.theme||"auto",false);
 setK(kdv);renderNext();render();drawOpts();initZd();drawZl();setView(location.hash=="#iny-odpad"?"zd":"zv",false);sched();
+/* ---- colour themes (palettes): blue = original, lavender, teal; each has light and dark ---- */
+const PALS=["blue","lavender","teal"];
+const PSW={blue:["#f5f6f8","#2f5fd0","#14161c","#6b93f2"],lavender:["#f6f4fa","#6a4cc2","#15131c","#a993f2"],teal:["#f0f5f5","#0b7480","#0e1618","#4cc2c8"]};
+const PALICON='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.2 0 1.9-1 1.5-2l-.3-.9c-.5-1.4.6-2.8 2.1-2.8H17a4 4 0 0 0 4-4c0-4.6-4-8.3-9-8.3z"/><circle cx="7.5" cy="11.5" r="1.4" style="fill:var(--K);stroke:none"/><circle cx="9.5" cy="7.3" r="1.4" style="fill:var(--S);stroke:none"/><circle cx="14" cy="6.6" r="1.4" style="fill:var(--btn);stroke:none"/><circle cx="17.3" cy="9.8" r="1.4" style="fill:var(--L);stroke:none"/></svg>';
+let pal="blue";try{const p=localStorage.getItem("palette");if(PALS.includes(p))pal=p}catch(e){}
+function swatch(p){const c=PSW[p];return '<svg class="psw" width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><rect width="15" height="20" fill="'+c[0]+'"/><rect x="15" width="15" height="20" fill="'+c[2]+'"/><circle cx="7.5" cy="10" r="4.5" fill="'+c[1]+'"/><circle cx="22.5" cy="10" r="4.5" fill="'+c[3]+'"/></svg>'}
+function drawPal(){$("pbs").innerHTML=PALICON;
+$("pmo").innerHTML=PALS.map(p=>'<button type="button" class="popt" role="radio" data-p="'+p+'" aria-checked="'+(p==pal)+'">'+swatch(p)+'<span>'+T("palette_"+p)+(p=="blue"?'<small>'+T("palette_orig")+'</small>':'')+'</span>'+(p==pal?ic(CHECK,18).replace("<svg",'<svg class="ck"'):"")+'</button>').join("")}
+function setPal(p){pal=p;const r=document.documentElement;if(p=="blue")delete r.dataset.palette;else r.dataset.palette=p;
+try{p=="blue"?localStorage.removeItem("palette"):localStorage.setItem("palette",p)}catch(e){}
+try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:"tema-"+p,title:"Farebna tema "+p,event:true})}catch(e){}drawPal()}
+function palMenu(o){$("pm").hidden=!o;$("pb").setAttribute("aria-expanded",o)}
+$("pmo").addEventListener("click",e=>{const b=e.target.closest("button[data-p]");if(!b)return;if(b.dataset.p!=pal)setPal(b.dataset.p);palMenu(false);$("pb").focus()});
+$("pb").onclick=e=>{e.stopPropagation();langMenu(false);palMenu($("pm").hidden)};
+$("lgb").addEventListener("click",()=>palMenu(false));
+document.addEventListener("click",e=>{if(!e.target.isConnected)return;if(!$("pm").hidden&&!e.target.closest("#pm,#pb"))palMenu(false)});
+document.addEventListener("keydown",e=>{if(e.key=="Escape"&&!$("pm").hidden){palMenu(false);$("pb").focus()}});
+drawPal();
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)refresh()});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script><script>
