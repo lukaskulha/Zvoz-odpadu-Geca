@@ -110,6 +110,42 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 .popt{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;color:var(--tx);font:inherit;font-size:15px;padding:9px 8px;border-radius:8px;text-align:left;cursor:pointer}.popt:hover{background:var(--in)}.popt[aria-checked="true"]{font-weight:600}.popt small{display:block;font-size:12px;font-weight:400;color:var(--mut)}.popt .ck{margin-left:auto;color:var(--btn)}
 .pcap{font-size:12px;color:var(--mut);margin:6px 8px 6px;text-transform:uppercase;letter-spacing:.06em}
 
+
+.in-pv{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border:1.5px dashed var(--bd2);border-radius:12px;padding:8px 10px;margin:0 0 12px;font-size:13px;color:var(--mut)}.in-pv b{color:var(--tx)}.in-pv .seg{display:flex;flex-wrap:wrap}.in-pv .seg button{padding:5px 9px;font-size:12.5px}
+.in-bn{display:flex;align-items:center;gap:10px;margin:14px 0 0;padding:10px 8px 10px 10px;border:1px solid color-mix(in srgb,var(--btn) 35%,var(--bd2));background:color-mix(in srgb,var(--btn) 8%,var(--card));border-radius:14px;animation:in-up .35s ease}
+.in-ico{display:block;flex:none;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.in-tx{flex:1;min-width:0}.in-tx b{display:block;font-size:14px;line-height:1.25}.in-tx small{display:block;font-size:12px;color:var(--mut);margin-top:2px}
+.in-go{flex:none;border:0;border-radius:10px;background:var(--btn);color:var(--bt);font:inherit;font-size:14px;font-weight:600;padding:9px 14px;cursor:pointer}
+.in-x{flex:none;display:flex;border:0;background:transparent;color:var(--mut);padding:6px;border-radius:8px;cursor:pointer}.in-x:hover{background:var(--in)}
+.in-fl{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:var(--btn);font:inherit;font-size:13px;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.in-bg{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;animation:in-fade .2s ease}
+.in-sh{width:100%;max-width:560px;background:var(--card);color:var(--tx);border-radius:18px 18px 0 0;padding:16px max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:in-sl .3s cubic-bezier(.2,.9,.3,1)}
+.in-hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}.in-hd b{font-size:17px;flex:1}
+.in-txt{font-size:14px;color:var(--mut);margin:0 0 12px}
+.in-st{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.in-st li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4;background:var(--in);border-radius:12px;padding:10px 12px}
+.in-st li>span{flex:none;width:24px;height:24px;border-radius:50%;background:var(--btn);color:var(--bt);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.in-st svg{vertical-align:-4px;color:var(--btn)}
+.in-note{font-size:12.5px;color:var(--mut);margin:12px 0 0}
+.in-cp{margin-top:14px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border:1px solid var(--bd2);border-radius:12px;background:var(--card);color:var(--tx);font:inherit;font-weight:600;cursor:pointer}
+.in-url{display:block;margin-top:8px;font-size:12.5px;color:var(--mut);text-align:center;user-select:all;word-break:break-all}
+.in-toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:70;background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(0,0,0,.25);animation:in-up .25s ease;white-space:nowrap}
+.in-ios{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:flex;align-items:flex-start;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 0;animation:in-fade .2s ease}
+.in-ioc{width:100%;max-width:380px;background:var(--card);color:var(--tx);border-radius:18px;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,.35);animation:in-up .3s ease}
+.in-arw{position:fixed;left:50%;bottom:calc(6px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;color:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));pointer-events:none}
+.in-arw span{background:#fff;color:#111;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
+.in-arw svg{animation:in-bob 1s ease-in-out infinite}
+.in-arw.l{left:28%}
+.in-arw.t{bottom:auto;top:calc(4px + env(safe-area-inset-top,0px));left:auto;right:calc(4px + env(safe-area-inset-right,0px));transform:none;flex-direction:column-reverse}.in-arw.t svg{transform:rotate(180deg);animation-name:in-bobu}
+.in-ios .in-st li.on{outline:2px solid var(--btn);outline-offset:-2px}
+.in-mock{display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:7px 12px;border-radius:10px;background:var(--card);border:1px solid var(--bd2);font-size:14px;font-weight:500}.in-mock svg{color:var(--tx)!important}.in-mock.b{color:#0a84ff;font-weight:700;border-color:transparent;background:transparent;padding-left:0}
+@keyframes in-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes in-bobu{0%,100%{transform:rotate(180deg) translateY(0)}50%{transform:rotate(180deg) translateY(8px)}}
+@keyframes in-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.in-toast{animation-name:in-upx}@keyframes in-upx{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes in-sl{from{transform:translateY(100%)}to{transform:none}}
+@keyframes in-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.in-bn,.in-bg,.in-sh,.in-mk,.in-toast,.in-ios,.in-ioc,.in-arw svg{animation:none}.in-arw.t svg{transform:rotate(180deg)}}
 </style></head><body><main class="w">
 <noscript><div><p>Zvoz odpadu v obci Geča 2026 (KOSIT): komunálny odpad, sklo, papier a plasty podľa zvozového kalendára. Pripomienky do kalendára a informácie, kam s objemným, elektro a iným odpadom. Na zobrazenie kalendára zapnite JavaScript.</p></div></noscript>
 
@@ -118,6 +154,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 <span class="pbw"><button class="hbtn" id="pb" type="button" aria-haspopup="listbox" aria-expanded="false"><span id="pbs"></span><span data-i18n="appearance"></span></button><div class="pop" id="pm" role="radiogroup" data-i18n-aria="palette_label" hidden><p class="pcap" data-i18n="palette_label"></p><div id="pmo"></div></div></span>
 <button class="lgb" id="lgb" type="button" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="lang_label"><span id="lgf"></span><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6-6"/></svg></button>
 <div class="lgm" id="lgm" role="listbox" data-i18n-aria="lang_label" hidden></div></div></div>
+<div class="in-bn" id="inbn" hidden><svg class="in-ico" width="40" height="40" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#4d8f2f"/><rect x="42" y="22" width="16" height="7" rx="3.5" fill="#fff"/><rect x="25" y="28" width="50" height="8" rx="4" fill="#fff"/><path d="M30 40h40l-3.5 40a4 4 0 0 1-4 3.5H37.5a4 4 0 0 1-4-3.5z" fill="#fff"/><rect x="36" y="47" width="6" height="28" rx="3" fill="#6b7280"/><rect x="44" y="47" width="6" height="28" rx="3" fill="#4d8f2f"/><rect x="52" y="47" width="6" height="28" rx="3" fill="#2f5fd0"/><rect x="60" y="47" width="6" height="28" rx="3" fill="#e0b030"/></svg><div class="in-tx"><b data-i18n="inst_title"></b><small data-i18n="inst_sub"></small></div><button type="button" class="in-go" id="ingo" data-i18n="inst_btn"></button><button type="button" class="in-x" id="inx" data-i18n-aria="close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 <div class="seg tabs" id="tabs" role="tablist" data-i18n-aria="tabs_label"><button role="tab" data-v="zv" aria-selected="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6M14 11v6"/></svg><span data-i18n="tab_zv"></span><em class="tp" id="pz"></em></button><button role="tab" data-v="zd" aria-selected="false"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span data-i18n="tab_zd"></span><em class="tp" id="pd"></em></button></div>
 <section id="v-zv">
 <div class="lb" data-i18n="sec_next"></div><div class="g" id="next"></div>
@@ -141,11 +178,14 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 <div class="zb"><a class="p" id="ztel" href="tel:+421556999821"></a><a class="s" id="zweb" href="https://www.obecgeca.sk/" target="_blank" rel="noopener"></a></div>
 <p class="zfoot" data-i18n="io_foot"></p></div>
 </section>
-<footer><span id="fz"><span id="fsrc"></span><br></span><span data-i18n="foot_ga"></span><br><span id="fver"></span></footer>
+<footer><span id="fz"><span id="fsrc"></span><br></span><span data-i18n="foot_ga"></span><br><button type="button" class="in-fl" id="infl" hidden><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 8v6M9 11h6"/></svg><span data-i18n="inst_foot"></span></button><br><span id="fver"></span></footer>
+<div class="in-bg" id="insh" hidden><div class="in-sh" role="dialog" aria-modal="true" aria-labelledby="inst-t"><div class="in-hd"><b id="inst-t"></b><button type="button" class="in-x" id="inshx" data-i18n-aria="close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div id="inshb"></div></div></div>
+<div class="in-ios" id="inios" hidden><div class="in-ioc" role="dialog" aria-modal="true" aria-labelledby="inios-t"><div class="in-hd"><b id="inios-t"></b><button type="button" class="in-x" id="iniosx" data-i18n-aria="close"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div id="iniosb"></div></div><div class="in-arw" id="inarw" aria-hidden="true"><span id="inarwl"></span><svg viewBox="0 0 40 56" width="34" height="48"><path d="M20 2v44M6 32l14 16l14-16" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+<div class="in-toast" id="intoast" role="status" hidden></div>
 </main>
 <script src="i18n.js"></script>
 <script>
-const APP_VERSION="v3";
+const APP_VERSION="v4";
 const D={K:{1:[6,20],2:[3,17],3:[3,17,31],4:[14,28],5:[12,26],6:[9,23],7:[7,21],8:[4,18],9:[1,15,29],10:[13,27],11:[10,24],12:[8,22]},
 S:{1:[3],3:[21],5:[2],7:[4],9:[5],10:[31]},
 P:{1:[17],2:[14],3:[14],4:[18],5:[16],6:[13],7:[18],8:[15],9:[19],10:[17],11:[21],12:[19]},
@@ -310,6 +350,46 @@ $("lgb").addEventListener("click",()=>palMenu(false));
 document.addEventListener("click",e=>{if(!e.target.isConnected)return;if(!$("pm").hidden&&!e.target.closest("#pm,#pb"))palMenu(false)});
 document.addEventListener("keydown",e=>{if(e.key=="Escape"&&!$("pm").hidden){palMenu(false);$("pb").focus()}});
 drawPal();
+/* ---- add to home screen ---- */
+const APP_URL="https://zvoz-odpadu-geca.netlify.app/";
+const SHARE='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M8 7l4-4l4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>';
+let bip=null;const SIM=null;
+function gcEv(p,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:p,title:t,event:true})}catch(e){}}
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();bip=e;instRefresh()});
+addEventListener("appinstalled",()=>{bip=null;gcEv("nainstalovane","Aplikacia nainstalovana");instDone()});
+function instMode(){if(SIM)return SIM;
+if(matchMedia("(display-mode: standalone)").matches||navigator.standalone===true)return "done";
+const ua=navigator.userAgent;if(/FBAN|FBAV|FB_IAB|FBIOS|Instagram|Messenger/i.test(ua))return "inapp";
+if(/iPad/.test(ua)||(navigator.platform=="MacIntel"&&navigator.maxTouchPoints>1))return "ipad";if(/iPhone|iPod/.test(ua)){const v=+((ua.match(/Version\/(\d+)/)||[])[1]||0);return v>=26?"ios26":"ios"}
+if(bip)return "native";if(/Android/i.test(ua))return "android";return null}
+function instHidden(){try{return +localStorage.getItem("inst_hide")>Date.now()}catch(e){return false}}
+function iosOverlay(m){const more=m=="ios26",pad=m=="ipad";
+$("inios-t").textContent=T("ios_title");
+const plus=ic('<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8v8M8 12h8"/>',18);
+const st=(more?[T("ios_1_more"),T("ios_share",{icon:SHARE})]:[T(pad?"ios_1_ipad":"ios_1",{icon:SHARE})]).concat([T("ios_2")+'<br><span class="in-mock">'+T("ios_add_label")+plus+'</span>',T("ios_3")+'<br><span class="in-mock b">'+T("ios_add_btn")+'</span>']);
+$("iniosb").innerHTML='<ol class="in-st">'+st.map((x,i)=>'<li'+(i?'':' class="on"')+'><span>'+(i+1)+'</span><div>'+x+'</div></li>').join("")+'</ol><p class="in-note">'+T("ios_note")+'</p>';
+const a=$("inarw");a.className="in-arw"+(more?" l":pad?" t":"");$("inios").style.paddingTop=pad?"calc(84px + env(safe-area-inset-top,0px))":"";$("inarwl").textContent=more?"≡":T("arw_here");$("inios").hidden=false;$("iniosx").focus()}
+function instRefresh(){const m=instMode();$("inbn").hidden=!m||m=="done"||instHidden();$("infl").hidden=!m||m=="done";
+}
+function toast(t){const e=$("intoast");e.innerHTML=ic(CHECK,18)+'<span>'+t+'</span>';e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2600)}
+function instDone(){$("insh").hidden=true;$("inios").hidden=true;toast(T("inst_done"));instRefresh()}
+const steps=(a)=>'<ol class="in-st">'+a.map((x,i)=>'<li><span>'+(i+1)+'</span><div>'+x+'</div></li>').join("")+'</ol>';
+function sheet(m){let t,h;
+if(m=="ios"){t=T("ios_title");h=steps([T("ios_1",{icon:SHARE}),T("ios_2"),T("ios_3")])+'<p class="in-note">'+T("ios_note")+'</p>'}
+else if(m=="inapp"){t=T("fb_title");h='<p class="in-txt">'+T("fb_text")+'</p>'+steps([T("fb_1"),T("fb_2"),T("fb_3")])+'<button type="button" class="in-cp" id="incp">'+ic('<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/>',18)+'<span>'+T("copy_link")+'</span></button><span class="in-url">'+APP_URL+'</span>'}
+else{t=T("and_title");h=steps([T("and_1"),T("and_2"),T("and_3")])}
+$("inst-t").textContent=t;$("inshb").innerHTML=h;$("insh").hidden=false;$("inshx").focus();
+const cp=$("incp");if(cp)cp.onclick=()=>{const ok=()=>toast(T("copied"));try{navigator.clipboard.writeText(APP_URL).then(ok,()=>{selUrl();ok()})}catch(e){selUrl();ok()}}}
+function selUrl(){const u=document.querySelector(".in-url");if(!u)return;const r=document.createRange();r.selectNodeContents(u);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+function instGo(){let m=instMode();gcEv("pridat-na-plochu-"+m,"Pridat na plochu: "+m);
+if(m=="native"&&bip){bip.prompt();bip.userChoice.then(r=>{bip=null;if(r.outcome=="accepted")instDone();else instRefresh()});return}if(m=="native")m="android";
+if(m=="ios"||m=="ios26"||m=="ipad")return iosOverlay(m);sheet(m)}
+$("ingo").onclick=instGo;$("infl").onclick=instGo;
+$("inx").onclick=()=>{try{localStorage.setItem("inst_hide",Date.now()+30*864e5)}catch(e){}$("inbn").hidden=true};
+$("iniosx").onclick=()=>{$("inios").hidden=true};$("inios").onclick=e=>{if(e.target.id=="inios")$("inios").hidden=true};
+$("inshx").onclick=()=>{$("insh").hidden=true};$("insh").onclick=e=>{if(e.target.id=="insh")$("insh").hidden=true};
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){$("insh").hidden=true;$("inios").hidden=true}});
+instRefresh();
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)refresh()});
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script><script>

@@ -17,7 +17,7 @@ A free, lightweight web app (PWA) with the 2026 waste collection calendar for th
 - A guide to what belongs in each bin and what does not
 - A separate **Other waste (Iný odpad)** tab: Geča has no collection yard, so the tab explains how bulky waste, small construction waste, e-waste, batteries, hazardous waste, textiles, cooking oil and green waste are handled, with the municipal office contact
 - Light and dark theme: automatic (follows your phone) or chosen manually, plus three colour themes (blue, lavender, teal) under the palette button
-- Installable as an app on your home screen, works offline
+- Installable as an app on your home screen, works offline. An "Add" banner installs it with one tap on Android (Chrome, Edge, Samsung) and shows a step-by-step guide with an arrow on iPhone and iPad, where Apple does not allow one-tap install; inside Facebook or Messenger it explains how to open the app in a browser first
 - Interface in Slovak, Hungarian and English (flag menu next to the theme switch; Hungarian is picked automatically when the phone is set to Hungarian, the choice is remembered, and `?lang=hu` / `?lang=en` in the link opens a specific language)
 
 ## Install on your phone
