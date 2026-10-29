@@ -10,6 +10,7 @@
 <meta property="og:url" content="https://zvoz-odpadu-geca.netlify.app/"><meta property="og:image" content="https://zvoz-odpadu-geca.netlify.app/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Zvoz odpadu Geča 2026">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Zvoz odpadu Geča 2026"><meta name="twitter:description" content="Kalendár zvozu odpadu v Geči a pripomienky do mobilu."><meta name="twitter:image" content="https://zvoz-odpadu-geca.netlify.app/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Zvoz odpadu Geča 2026","url":"https://zvoz-odpadu-geca.netlify.app/","description":"Zvoz odpadu Geča 2026: kalendár vývozu komunálneho odpadu, skla, papiera a plastov (KOSIT), upozornenia do kalendára v mobile a kam s objemným, elektro a iným odpadom v Geči.","inLanguage":"sk","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"areaServed":{"@type":"Place","name":"Geča, Košice-okolie, Slovensko"}}</script>
+<script>window.__bip=null;addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__bip=e});</script>
 <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t;var p=localStorage.getItem("palette");if(p==="lavender"||p==="teal")document.documentElement.dataset.palette=p}catch(e){}</script>
 <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" type="image/png" href="icon-192.png"><meta name="theme-color" content="#4d8f2f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Zvoz odpadu">
 <style>
@@ -117,6 +118,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 .in-tx{flex:1;min-width:0}.in-tx b{display:block;font-size:14px;line-height:1.25}.in-tx small{display:block;font-size:12px;color:var(--mut);margin-top:2px}
 .in-go{flex:none;border:0;border-radius:10px;background:var(--btn);color:var(--bt);font:inherit;font-size:14px;font-weight:600;padding:9px 14px;cursor:pointer}
 .in-x{flex:none;display:flex;border:0;background:transparent;color:var(--mut);padding:6px;border-radius:8px;cursor:pointer}.in-x:hover{background:var(--in)}
+.in-now{width:100%;padding:14px;font-size:16px}
 .in-fl{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:var(--btn);font:inherit;font-size:13px;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .in-bg{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;animation:in-fade .2s ease}
 .in-sh{width:100%;max-width:560px;background:var(--card);color:var(--tx);border-radius:18px 18px 0 0;padding:16px max(18px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));box-shadow:0 -8px 30px rgba(0,0,0,.25);animation:in-sl .3s cubic-bezier(.2,.9,.3,1)}
@@ -185,7 +187,7 @@ footer{margin-top:22px;font-size:13px;color:var(--mut)}footer a{color:var(--btn)
 </main>
 <script src="i18n.js"></script>
 <script>
-const APP_VERSION="v4";
+const APP_VERSION="v5";
 const D={K:{1:[6,20],2:[3,17],3:[3,17,31],4:[14,28],5:[12,26],6:[9,23],7:[7,21],8:[4,18],9:[1,15,29],10:[13,27],11:[10,24],12:[8,22]},
 S:{1:[3],3:[21],5:[2],7:[4],9:[5],10:[31]},
 P:{1:[17],2:[14],3:[14],4:[18],5:[16],6:[13],7:[18],8:[15],9:[19],10:[17],11:[21],12:[19]},
@@ -353,11 +355,12 @@ drawPal();
 /* ---- add to home screen ---- */
 const APP_URL="https://zvoz-odpadu-geca.netlify.app/";
 const SHARE='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M8 7l4-4l4 4"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>';
-let bip=null;const SIM=null;
+let bip=window.__bip||null,instd=false;const SIM=null;
+if(navigator.getInstalledRelatedApps)navigator.getInstalledRelatedApps().then(a=>{if(a&&a.length){instd=true;instRefresh()}}).catch(()=>{});
 function gcEv(p,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:p,title:t,event:true})}catch(e){}}
-addEventListener("beforeinstallprompt",e=>{e.preventDefault();bip=e;instRefresh()});
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();bip=e;instRefresh();if(!$("insh").hidden&&$("insh").dataset.m=="android")sheet("android")});
 addEventListener("appinstalled",()=>{bip=null;gcEv("nainstalovane","Aplikacia nainstalovana");instDone()});
-function instMode(){if(SIM)return SIM;
+function instMode(){if(SIM)return SIM;if(instd)return "done";
 if(matchMedia("(display-mode: standalone)").matches||navigator.standalone===true)return "done";
 const ua=navigator.userAgent;if(/FBAN|FBAV|FB_IAB|FBIOS|Instagram|Messenger/i.test(ua))return "inapp";
 if(/iPad/.test(ua)||(navigator.platform=="MacIntel"&&navigator.maxTouchPoints>1))return "ipad";if(/iPhone|iPod/.test(ua)){const v=+((ua.match(/Version\/(\d+)/)||[])[1]||0);return v>=26?"ios26":"ios"}
@@ -372,13 +375,14 @@ const a=$("inarw");a.className="in-arw"+(more?" l":pad?" t":"");$("inios").style
 function instRefresh(){const m=instMode();$("inbn").hidden=!m||m=="done"||instHidden();$("infl").hidden=!m||m=="done";
 }
 function toast(t){const e=$("intoast");e.innerHTML=ic(CHECK,18)+'<span>'+t+'</span>';e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2600)}
-function instDone(){$("insh").hidden=true;$("inios").hidden=true;toast(T("inst_done"));instRefresh()}
+function instDone(){instd=true;$("insh").hidden=true;$("inios").hidden=true;toast(T("inst_done"));instRefresh()}
 const steps=(a)=>'<ol class="in-st">'+a.map((x,i)=>'<li><span>'+(i+1)+'</span><div>'+x+'</div></li>').join("")+'</ol>';
 function sheet(m){let t,h;
 if(m=="ios"){t=T("ios_title");h=steps([T("ios_1",{icon:SHARE}),T("ios_2"),T("ios_3")])+'<p class="in-note">'+T("ios_note")+'</p>'}
 else if(m=="inapp"){t=T("fb_title");h='<p class="in-txt">'+T("fb_text")+'</p>'+steps([T("fb_1"),T("fb_2"),T("fb_3")])+'<button type="button" class="in-cp" id="incp">'+ic('<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/>',18)+'<span>'+T("copy_link")+'</span></button><span class="in-url">'+APP_URL+'</span>'}
+else if(bip){t=T("and_title");h='<button type="button" class="in-go in-now" id="innow">'+T("inst_now")+'</button>'}
 else{t=T("and_title");h=steps([T("and_1"),T("and_2"),T("and_3")])}
-$("inst-t").textContent=t;$("inshb").innerHTML=h;$("insh").hidden=false;$("inshx").focus();
+$("inst-t").textContent=t;$("inshb").innerHTML=h;$("insh").dataset.m=m;$("insh").hidden=false;const nw=$("innow");if(nw)nw.onclick=()=>{$("insh").hidden=true;instGo()};$("inshx").focus();
 const cp=$("incp");if(cp)cp.onclick=()=>{const ok=()=>toast(T("copied"));try{navigator.clipboard.writeText(APP_URL).then(ok,()=>{selUrl();ok()})}catch(e){selUrl();ok()}}}
 function selUrl(){const u=document.querySelector(".in-url");if(!u)return;const r=document.createRange();r.selectNodeContents(u);const s=getSelection();s.removeAllRanges();s.addRange(r)}
 function instGo(){let m=instMode();gcEv("pridat-na-plochu-"+m,"Pridat na plochu: "+m);
